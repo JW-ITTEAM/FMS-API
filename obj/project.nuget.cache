@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "K3uCEP+NCzAU3+0322FySnSrdEc8yt44YHT2iBzbks+6mn4KBBwqaFnU3Y+ZUkUuGWG3KigiT6EE7rP7WaWHiA==",
+  "success": true,
+  "projectFilePath": "C:\\_DevOn\\JWI_FMS\\FMS-API\\FMS-API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JWI\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\JWI\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\JWI\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\JWI\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\JWI\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\JWI\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
