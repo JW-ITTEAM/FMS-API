@@ -4,6 +4,7 @@ using FMS_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FMS_API.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220802224130_Mig01_BasicStructure_OimmainOihmain")]
+    partial class Mig01_BasicStructure_OimmainOihmain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,82 +62,96 @@ namespace FMS_API.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("F_ID"), 1L, 1);
 
                     b.Property<string>("F_AMSBLNO")
+                        .IsRequired()
                         .HasMaxLength(16)
                         .HasColumnType("nvarchar(16)");
 
                     b.Property<string>("F_BName")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("F_Broker")
+                    b.Property<int>("F_Broker")
                         .HasColumnType("int");
 
-                    b.Property<float?>("F_CBM")
+                    b.Property<float>("F_CBM")
                         .HasColumnType("real");
 
-                    b.Property<int?>("F_CFSLocation")
+                    b.Property<int>("F_CFSLocation")
                         .HasColumnType("int");
 
                     b.Property<string>("F_CName")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("F_ClosedBy")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("F_Commodity")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int?>("F_Consignee")
+                    b.Property<int>("F_Consignee")
                         .HasColumnType("int");
 
                     b.Property<string>("F_CustRefNo")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("F_Customer")
+                    b.Property<int>("F_Customer")
                         .HasColumnType("int");
 
                     b.Property<string>("F_DCodeCustom")
+                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<float?>("F_DefaultRate")
+                    b.Property<float>("F_DefaultRate")
                         .HasColumnType("real");
 
                     b.Property<string>("F_Description")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_DoorMove")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("F_ExpRLS")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_FCode")
+                    b.Property<int>("F_FCode")
                         .HasColumnType("int");
 
                     b.Property<string>("F_FCodeCustom")
+                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<DateTime?>("F_FETA")
+                    b.Property<DateTime>("F_FETA")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_FileClosed")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("F_FinalDest")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("F_ForeignDest")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
@@ -145,109 +161,127 @@ namespace FMS_API.Data.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("F_IMemo")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
-                    b.Property<int?>("F_INVOICETO")
+                    b.Property<int>("F_INVOICETO")
                         .HasColumnType("int");
 
                     b.Property<string>("F_ISFNO")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("F_ITCarrier")
+                    b.Property<int>("F_ITCarrier")
                         .HasColumnType("int");
 
                     b.Property<string>("F_ITClass")
+                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<DateTime?>("F_ITDate")
+                    b.Property<DateTime>("F_ITDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_ITNo")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("F_ITPlace")
+                    b.Property<int>("F_ITPlace")
                         .HasMaxLength(20)
                         .HasColumnType("int");
 
-                    b.Property<float?>("F_KGS")
+                    b.Property<float>("F_KGS")
                         .HasColumnType("real");
 
-                    b.Property<float?>("F_LBS")
+                    b.Property<float>("F_LBS")
                         .HasColumnType("real");
 
                     b.Property<string>("F_Mark")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_MarkGross")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_MarkMeasure")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_MarkPkg")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_MoveType")
+                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("F_NName")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("F_Nomi")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_Notify")
+                    b.Property<int>("F_Notify")
                         .HasColumnType("int");
 
-                    b.Property<int?>("F_OIMMAINID")
+                    b.Property<int>("F_OIMMAINID")
                         .HasColumnType("int");
 
                     b.Property<string>("F_Operator")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("F_PMemo")
+                        .IsRequired()
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_PPCC")
+                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
 
-                    b.Property<DateTime?>("F_PickupDate")
+                    b.Property<DateTime>("F_PickupDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<float?>("F_Pkgs")
+                    b.Property<float>("F_Pkgs")
                         .HasColumnType("real");
 
                     b.Property<string>("F_Punit")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("F_SManID")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("F_SName")
+                        .IsRequired()
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("F_SelectContainer")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_Shipper")
+                    b.Property<int>("F_Shipper")
                         .HasColumnType("int");
 
                     b.HasKey("F_ID");
@@ -263,84 +297,96 @@ namespace FMS_API.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("F_ID"), 1L, 1);
 
-                    b.Property<int?>("F_Agent")
+                    b.Property<int>("F_Agent")
                         .HasColumnType("int");
 
                     b.Property<string>("F_AgentRefNo")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int?>("F_CFSLocation")
+                    b.Property<int>("F_CFSLocation")
                         .HasColumnType("int");
 
-                    b.Property<int?>("F_CYLocation")
+                    b.Property<int>("F_CYLocation")
                         .HasColumnType("int");
 
                     b.Property<string>("F_ClosedBy")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int?>("F_DCode")
+                    b.Property<int>("F_DCode")
                         .HasColumnType("int");
 
                     b.Property<string>("F_DisCharge")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("F_ETA")
+                    b.Property<DateTime>("F_ETA")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("F_ETD")
+                    b.Property<DateTime>("F_ETD")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_ExpRLS")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_FCode")
+                    b.Property<int>("F_FCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("F_FETA")
+                    b.Property<DateTime>("F_FETA")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_FeederVessel")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("F_FileClosed")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("F_FinalDest")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<int?>("F_ITCarrier")
+                    b.Property<int>("F_ITCarrier")
                         .HasColumnType("int");
 
                     b.Property<string>("F_ITClass")
+                        .IsRequired()
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
-                    b.Property<DateTime?>("F_ITDate")
+                    b.Property<DateTime>("F_ITDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_ITNo")
+                        .IsRequired()
                         .HasMaxLength(12)
                         .HasColumnType("nvarchar(12)");
 
                     b.Property<string>("F_ITPlace")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("F_LCLFCL")
+                        .IsRequired()
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_LCode")
+                    b.Property<int>("F_LCode")
                         .HasColumnType("int");
 
                     b.Property<string>("F_LoadingPort")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -350,40 +396,48 @@ namespace FMS_API.Data.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("F_MoveType")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("F_PPCC")
+                        .IsRequired()
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
 
-                    b.Property<DateTime?>("F_PostDate")
+                    b.Property<DateTime>("F_PostDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("F_RefNo")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("F_SMBLNo")
+                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("F_SVCCNo")
+                        .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int?>("F_SteamShip")
+                    b.Property<int>("F_SteamShip")
                         .HasColumnType("int");
 
                     b.Property<string>("F_Vessel")
+                        .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
                     b.Property<string>("F_Voyage")
+                        .IsRequired()
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("F_mCommodity")
+                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
