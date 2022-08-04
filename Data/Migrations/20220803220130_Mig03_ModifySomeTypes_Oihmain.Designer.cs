@@ -4,6 +4,7 @@ using FMS_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FMS_API.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220803220130_Mig03_ModifySomeTypes_Oihmain")]
+    partial class Mig03_ModifySomeTypes_Oihmain
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,6 +72,9 @@ namespace FMS_API.Data.Migrations
                     b.Property<int?>("F_Broker")
                         .HasColumnType("int");
 
+                    b.Property<float?>("F_CBM")
+                        .HasColumnType("real");
+
                     b.Property<int?>("F_CFSLocation")
                         .HasColumnType("int");
 
@@ -95,7 +100,7 @@ namespace FMS_API.Data.Migrations
                     b.Property<int?>("F_Customer")
                         .HasColumnType("int");
 
-                    b.Property<string>("F_DcodeCustom")
+                    b.Property<string>("F_DCodeCustom")
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
 
@@ -106,6 +111,10 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
+                    b.Property<string>("F_DoorMove")
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)");
+
                     b.Property<string>("F_ExpRLS")
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
@@ -113,12 +122,12 @@ namespace FMS_API.Data.Migrations
                     b.Property<int?>("F_FCode")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("F_FETA")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("F_FcodeCustom")
+                    b.Property<string>("F_FCodeCustom")
                         .HasMaxLength(5)
                         .HasColumnType("nvarchar(5)");
+
+                    b.Property<DateTime?>("F_FETA")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("F_FileClosed")
                         .HasMaxLength(1)
@@ -137,9 +146,9 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("F_HSCODE")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
+                    b.Property<string>("F_IMemo")
+                        .HasMaxLength(800)
+                        .HasColumnType("nvarchar(800)");
 
                     b.Property<int?>("F_INVOICETO")
                         .HasColumnType("int");
@@ -166,6 +175,12 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<float?>("F_KGS")
+                        .HasColumnType("real");
+
+                    b.Property<float?>("F_LBS")
+                        .HasColumnType("real");
+
                     b.Property<string>("F_Mark")
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
@@ -179,10 +194,6 @@ namespace FMS_API.Data.Migrations
                         .HasColumnType("nvarchar(800)");
 
                     b.Property<string>("F_MarkPkg")
-                        .HasMaxLength(800)
-                        .HasColumnType("nvarchar(800)");
-
-                    b.Property<string>("F_Memo")
                         .HasMaxLength(800)
                         .HasColumnType("nvarchar(800)");
 
@@ -208,6 +219,13 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<float?>("F_PKGS")
+                        .HasColumnType("real");
+
+                    b.Property<string>("F_PMemo")
+                        .HasMaxLength(800)
+                        .HasColumnType("nvarchar(800)");
+
                     b.Property<string>("F_PPCC")
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
@@ -215,14 +233,23 @@ namespace FMS_API.Data.Migrations
                     b.Property<DateTime?>("F_PickupDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("F_Punit")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("F_SManID")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
                     b.Property<string>("F_SName")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int?>("F_Shipper")
-                        .HasColumnType("int");
+                    b.Property<string>("F_SelectContainer")
+                        .HasMaxLength(1)
+                        .HasColumnType("nvarchar(1)");
 
-                    b.Property<int?>("F_TotalContainer")
+                    b.Property<int?>("F_Shipper")
                         .HasColumnType("int");
 
                     b.HasKey("F_ID");
@@ -239,29 +266,14 @@ namespace FMS_API.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("F_ID"), 1L, 1);
 
                     b.Property<int?>("F_Agent")
-                        .HasMaxLength(100)
                         .HasColumnType("int");
-
-                    b.Property<string>("F_AgentName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("F_AgentRefNo")
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<string>("F_BName")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int?>("F_Broker")
-                        .HasColumnType("int");
-
                     b.Property<int?>("F_CFSLocation")
                         .HasColumnType("int");
-
-                    b.Property<string>("F_CName")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int?>("F_CYLocation")
                         .HasColumnType("int");
@@ -269,9 +281,6 @@ namespace FMS_API.Data.Migrations
                     b.Property<string>("F_ClosedBy")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
-
-                    b.Property<int?>("F_Consignee")
-                        .HasColumnType("int");
 
                     b.Property<int?>("F_DCode")
                         .HasColumnType("int");
@@ -303,10 +312,6 @@ namespace FMS_API.Data.Migrations
                     b.Property<string>("F_FileClosed")
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
-
-                    b.Property<string>("F_FinalDelivery")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("F_FinalDest")
                         .HasMaxLength(25)
@@ -350,20 +355,9 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<string>("F_NName")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<int?>("F_Notify")
-                        .HasColumnType("int");
-
                     b.Property<string>("F_PPCC")
                         .HasMaxLength(2)
                         .HasColumnType("nvarchar(2)");
-
-                    b.Property<string>("F_PaidPlace")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
 
                     b.Property<DateTime?>("F_PostDate")
                         .HasColumnType("datetime2");
@@ -376,18 +370,11 @@ namespace FMS_API.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("F_SName")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<string>("F_SVCCNo")
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int?>("F_Shipper")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("F_TotalContainer")
+                    b.Property<int?>("F_SteamShip")
                         .HasColumnType("int");
 
                     b.Property<string>("F_Vessel")

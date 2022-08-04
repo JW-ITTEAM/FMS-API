@@ -16,9 +16,14 @@ namespace FMS_API.Controllers
         }
 
         [HttpGet]
+        [Route("getOceanImportList")]
         public async Task<ActionResult<List<T_OIMMAIN>>> getOceanImportList()
         {
-            var result = await _context.T_OIMMAIN.Take(10).ToListAsync();
+            var result = await _context.T_OIMMAIN
+                                .Join(_context.T_OIHMAIN, 
+                                    oim => oim.F_ID, 
+                                    oih => oih.F_OIMMAINID, 
+                                (oim, oih) => new { oim, oih }).ToListAsync();
             return Ok(result);
         }
     }

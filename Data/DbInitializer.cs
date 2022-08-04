@@ -21,6 +21,11 @@ namespace FMS_API.Data
             var oimmainobj = new SeedOimmainList();
             var oimmain_list = oimmainobj.get_OIMMAIN_Seed();
             _context.T_OIMMAIN.AddRange(oimmain_list);
+
+            var oihmainobj = new SeedOihmainList();
+            var oihmain_list = oihmainobj.get_OIHMAIN_Seed();
+            _context.T_OIHMAIN.AddRange(oihmain_list);
+
             _context.SaveChanges();
         }
 

@@ -21,7 +21,7 @@ namespace FMS_API.Data.SeedData
                     F_ETD = new DateTime(2022,6,18,00,00,00),
                     F_Vessel = "EOS I",
                     F_Voyage = "V.033",
-                    F_SteamShip = null,
+                    ////F_SteamShip = null,
                     //F_Carrier
                     F_LCode = 1604,
                     F_LoadingPort = "HOCHIMINH, VIETNAM",
@@ -72,7 +72,7 @@ namespace FMS_API.Data.SeedData
                     F_ETD = new DateTime(2022,5,22,00,00,00),
                     F_Vessel = "APL BELGIUM",
                     F_Voyage = "V133",
-                    F_SteamShip = null,
+                    ////F_SteamShip = null,
                     //F_Carrier
                     F_LCode = 1604,
                     F_LoadingPort = "HOCHIMINH, VIETNAM",
@@ -123,7 +123,7 @@ namespace FMS_API.Data.SeedData
                     F_ETD = new DateTime(2022,5,28,00,00,00),
                     F_Vessel = "HJ. PARIS",
                     F_Voyage = "V.0053E",
-                    F_SteamShip = null,
+                    ////F_SteamShip = null,
                     //F_Carrier
                     F_LCode = 1765,
                     F_LoadingPort = "PUSAN,KOREA",
