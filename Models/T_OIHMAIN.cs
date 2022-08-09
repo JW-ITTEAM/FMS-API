@@ -42,11 +42,11 @@
         public string? F_ClosedBy { get; set; }
         public string? F_Operator { get; set; }
         public string? F_MoveType { get; set; }
-        public string? F_Nomi { get; set; }
-        public string? F_Memo { get; set; }
+        public string? F_Nomi { get; set; }        
         public float? F_DefaultRate { get; set; }
         public int? F_INVOICETO { get; set; }
         public string? F_AMSBLNO { get; set; }
         public string? F_ISFNO { get; set; }
+        public string? F_Memo { get; set; }
     }
 }

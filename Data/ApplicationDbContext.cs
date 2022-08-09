@@ -9,6 +9,9 @@ namespace FMS_API.Data
         {
             // Lazy loading set off
             ChangeTracker.LazyLoadingEnabled = false;
+
+            // Last Update Version
+            // Database Document 08082022
         }
 
         public DbSet<SuperHero> SuperHeroes { get; set; }
@@ -51,6 +54,7 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_ExpRLS).HasMaxLength(1);
                 opt.Property(x => x.F_FileClosed).HasMaxLength(1);
                 opt.Property(x => x.F_ClosedBy).HasMaxLength(10);
+                opt.Property(x => x.F_Memo).HasMaxLength(2000);
             });
 
             modelBuilder.Entity<T_OIHMAIN>(opt =>
@@ -85,13 +89,13 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_Operator).HasMaxLength(10);
                 //opt.Property(x => x.F_SelectContainer).HasMaxLength(1);
                 opt.Property(x => x.F_MoveType).HasMaxLength(15);
-                opt.Property(x => x.F_Nomi).HasMaxLength(1);
-                opt.Property(x => x.F_Memo).HasMaxLength(800);
+                opt.Property(x => x.F_Nomi).HasMaxLength(1);                
                 //opt.Property(x => x.F_IMemo).HasMaxLength(800);
                 //opt.Property(x => x.F_PMemo).HasMaxLength(800);
                 //opt.Property(x => x.F_DoorMove).HasMaxLength(1);
                 opt.Property(x => x.F_AMSBLNO).HasMaxLength(16);
                 opt.Property(x => x.F_ISFNO).HasMaxLength(20);
+                opt.Property(x => x.F_Memo).HasMaxLength(2000);
             });
         }
         

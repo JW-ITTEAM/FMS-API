@@ -48,5 +48,6 @@
         public string? F_ExpRLS { get; set; }
         public string? F_FileClosed { get; set; }
         public string? F_ClosedBy { get; set; }
+        public string? F_Memo { get; set; }
     }
 }

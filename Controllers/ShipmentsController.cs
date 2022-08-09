@@ -17,13 +17,36 @@ namespace FMS_API.Controllers
 
         [HttpGet]
         [Route("getOceanImportList")]
-        public async Task<ActionResult<List<T_OIMMAIN>>> getOceanImportList()
+        public async Task<ActionResult<List<Object>>> getOceanImportList()
         {
             var result = await _context.T_OIMMAIN
-                                .Join(_context.T_OIHMAIN, 
-                                    oim => oim.F_ID, 
-                                    oih => oih.F_OIMMAINID, 
-                                (oim, oih) => new { oim, oih }).ToListAsync();
+                            .GroupJoin(_context.T_OIHMAIN, 
+                                x => x.F_ID, 
+                                y => y.F_OIMMAINID, 
+                                (x, y) => new { oim = x, oih = y })
+                            .SelectMany(
+                                z => z.oih.DefaultIfEmpty(),
+                                (x, y) => new { oim = x.oim, oih = y })
+                            .ToListAsync();
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("getOimDetail/{id}")]
+        public async Task<ActionResult<List<Object>>> getOceanImportDetail(string id)
+        {
+            var result = await _context.T_OIMMAIN
+                            .GroupJoin(_context.T_OIHMAIN,
+                                x => x.F_ID,
+                                y => y.F_OIMMAINID,
+                                (x, y) => new { oim = x, oih = y })
+                            .Where(x => x.oim.F_RefNo == id)
+                            .SelectMany(
+                                z => z.oih.DefaultIfEmpty(),
+                                (x, y) => new { oim = x.oim, oih = y })
+                            .ToListAsync();
+
             return Ok(result);
         }
     }
