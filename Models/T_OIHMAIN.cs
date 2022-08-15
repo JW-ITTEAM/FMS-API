@@ -27,16 +27,17 @@
         public int? F_FCode { get; set; }
         public string? F_FinalDest { get; set; }
         public DateTime? F_FETA { get; set; }
-        public string? F_ITClass { get; set; }
+        //public string? F_ITClass { get; set; }
         public DateTime? F_PickupDate { get; set; }
-        public int? F_ITCarrier { get; set; }
-        public string? F_ITNo { get; set; }
-        public string? F_ITPlace { get; set; }
-        public DateTime? F_ITDate { get; set; }
+        //public int? F_ITCarrier { get; set; }
+        //public string? F_ITNo { get; set; }
+        //public string? F_ITPlace { get; set; }
+        //public DateTime? F_ITDate { get; set; }
         public string? F_DcodeCustom { get; set; }
         public string? F_FcodeCustom { get; set; }
         public string? F_ForeignDest { get; set; }
         public string? F_PPCC { get; set; }
+        public string? F_PaidPlace { get; set; }
         public string? F_Mark { get; set; }
         public string? F_FileClosed { get; set; }
         public string? F_ClosedBy { get; set; }

@@ -31,10 +31,10 @@
         public DateTime? F_PostDate { get; set; }
         public string? F_LCLFCL { get; set; }
         public int? F_TotalContainer { get; set; }
-        public int? F_ITCarrier { get; set; }
+        //public int? F_ITCarrier { get; set; }
         public string? F_ITNo { get; set; }
         public string? F_ITPlace { get; set; }
-        public string? F_ITClass { get; set; }
+        //public string? F_ITClass { get; set; }
         public DateTime? F_ITDate { get; set; }
         public int? F_FCode { get; set; }
         public string? F_FinalDelivery { get; set; }

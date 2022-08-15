@@ -23,6 +23,54 @@ namespace FMS_API.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<T_USER>(opt =>
+            {
+                opt.HasKey(x => x.F_ID);
+                opt.Property(x => x.F_UserId).HasMaxLength(20);
+                opt.Property(x => x.F_UserPwd).HasMaxLength(20);
+                opt.Property(x => x.F_UserName).HasMaxLength(30);
+                opt.Property(x => x.F_UserEmail).HasMaxLength(100);
+                opt.Property(x => x.F_Phone).HasMaxLength(20);
+                opt.Property(x => x.F_FAX).HasMaxLength(20);
+                opt.Property(x => x.F_Dept).HasMaxLength(10);
+            });
+
+            modelBuilder.Entity<T_COMPANY>(opt =>
+            {
+                opt.HasKey(x => x.F_ID);
+                opt.Property(x => x.F_SName).HasMaxLength(50);
+                opt.Property(x => x.F_FName).HasMaxLength(50);
+                opt.Property(x => x.F_Group).HasMaxLength(10);
+                opt.Property(x => x.F_Addr).HasMaxLength(200);
+                opt.Property(x => x.F_City).HasMaxLength(20);
+                opt.Property(x => x.F_State).HasMaxLength(2);
+                opt.Property(x => x.F_ZipCode).HasMaxLength(10);
+                opt.Property(x => x.F_Country).HasMaxLength(50);
+                opt.Property(x => x.F_Phone).HasMaxLength(20);
+                opt.Property(x => x.F_FAX).HasMaxLength(20);
+                opt.Property(x => x.F_EMAIL).HasMaxLength(50);
+                opt.Property(x => x.F_Website).HasMaxLength(50);
+                opt.Property(x => x.F_Credential).HasMaxLength(50);
+                opt.Property(x => x.F_AccountNo).HasMaxLength(50);
+                opt.Property(x => x.F_IRSNo).HasMaxLength(20);
+                opt.Property(x => x.F_IRSType).HasMaxLength(1);
+                opt.Property(x => x.F_BondNo).HasMaxLength(50);
+                opt.Property(x => x.F_IATANo).HasMaxLength(50);
+                opt.Property(x => x.F_PIMSTYPE).HasMaxLength(10);
+                opt.Property(x => x.F_PIMSCNTRY).HasMaxLength(2);
+            });
+
+            modelBuilder.Entity<T_FILEMAIN>(opt =>
+            {
+                opt.HasKey(x => x.F_ID);
+                opt.Property(x => x.F_TableName).HasMaxLength(20);
+                opt.Property(x => x.F_BLNO).HasMaxLength(20);
+                opt.Property(x => x.F_FILENAME).HasMaxLength(100);
+                opt.Property(x => x.F_FILEPATH).HasMaxLength(100);
+                opt.Property(x => x.F_APIKEY).HasMaxLength(100);
+                opt.Property(x => x.F_UserName).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<T_OIMMAIN>(opt =>
             {
                 opt.HasKey(x => x.F_ID);
@@ -43,7 +91,7 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_LCLFCL).HasMaxLength(1);
                 opt.Property(x => x.F_ITNo).HasMaxLength(12);
                 opt.Property(x => x.F_ITPlace).HasMaxLength(20);
-                opt.Property(x => x.F_ITClass).HasMaxLength(5);
+                //opt.Property(x => x.F_ITClass).HasMaxLength(5);
                 opt.Property(x => x.F_FinalDelivery).HasMaxLength(50);
                 opt.Property(x => x.F_FinalDest).HasMaxLength(25);
                 opt.Property(x => x.F_PPCC).HasMaxLength(2);
@@ -75,13 +123,14 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_MarkMeasure).HasMaxLength(800);
                 opt.Property(x => x.F_ExpRLS).HasMaxLength(1);
                 opt.Property(x => x.F_FinalDest).HasMaxLength(25);
-                opt.Property(x => x.F_ITClass).HasMaxLength(5);
-                opt.Property(x => x.F_ITNo).HasMaxLength(20);
-                opt.Property(x => x.F_ITPlace).HasMaxLength(20);
+                //opt.Property(x => x.F_ITClass).HasMaxLength(5);
+                //opt.Property(x => x.F_ITNo).HasMaxLength(20);
+                //opt.Property(x => x.F_ITPlace).HasMaxLength(20);
                 opt.Property(x => x.F_DcodeCustom).HasMaxLength(5);
                 opt.Property(x => x.F_FcodeCustom).HasMaxLength(5);
                 opt.Property(x => x.F_ForeignDest).HasMaxLength(25);
                 opt.Property(x => x.F_PPCC).HasMaxLength(2);
+                opt.Property(x => x.F_PaidPlace).HasMaxLength(2);
                 //opt.Property(x => x.F_SManID).HasMaxLength(10);
                 opt.Property(x => x.F_Mark).HasMaxLength(800);                
                 opt.Property(x => x.F_FileClosed).HasMaxLength(1);
