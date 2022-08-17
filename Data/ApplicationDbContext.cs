@@ -1,4 +1,4 @@
-﻿using FMS_API.Models;
+﻿using FMS_API.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace FMS_API.Data
@@ -13,10 +13,13 @@ namespace FMS_API.Data
             // Last Update Version
             // Database Document 08082022
         }
-
         public DbSet<SuperHero> SuperHeroes { get; set; }
         public DbSet<T_OIMMAIN> T_OIMMAIN { get; set; }
         public DbSet<T_OIHMAIN> T_OIHMAIN { get; set; }
+        public DbSet<T_USER> T_USER { get; set; }
+        public DbSet<T_FILEMAIN> T_FILEMAIN { get; set; }
+        public DbSet<T_COMPANY> T_COMPANY { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

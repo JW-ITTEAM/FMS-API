@@ -1,4 +1,4 @@
-﻿namespace FMS_API.Models
+﻿namespace FMS_API.Entities
 {
     public class T_OIHMAIN
     {
@@ -43,7 +43,7 @@
         public string? F_ClosedBy { get; set; }
         public string? F_Operator { get; set; }
         public string? F_MoveType { get; set; }
-        public string? F_Nomi { get; set; }        
+        public string? F_Nomi { get; set; }
         public float? F_DefaultRate { get; set; }
         public int? F_INVOICETO { get; set; }
         public string? F_AMSBLNO { get; set; }

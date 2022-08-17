@@ -1,4 +1,4 @@
-﻿using FMS_API.Models;
+﻿using FMS_API.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

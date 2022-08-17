@@ -1,4 +1,4 @@
-﻿using FMS_API.Models;
+﻿using FMS_API.Entities;
 
 namespace FMS_API.Data.SeedData
 {

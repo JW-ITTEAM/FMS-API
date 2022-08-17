@@ -1,5 +1,7 @@
-﻿using FMS_API.Data;
+﻿using AutoMapper;
+using FMS_API.Data;
 using FMS_API.Models;
+using FMS_API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,45 +11,39 @@ namespace FMS_API.Controllers
     [ApiController]
     public class ShipmentsController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
-        public ShipmentsController(ApplicationDbContext context)
+        private readonly IMapper _mapper;
+        private readonly IShipmentRepository _shipmentRepository;
+
+        public ShipmentsController(IShipmentRepository shipmentRepository, IMapper mapper)
         {
-            _context = context;
+            _mapper = mapper;
+            _shipmentRepository = shipmentRepository;
         }
 
         [HttpGet]
         [Route("getOceanImportList")]
-        public async Task<ActionResult<List<Object>>> getOceanImportList()
+        public async Task<IActionResult> getOceanImportList()
         {
-            var result = await _context.T_OIMMAIN
-                            .GroupJoin(_context.T_OIHMAIN, 
-                                x => x.F_ID, 
-                                y => y.F_OIMMAINID, 
-                                (x, y) => new { oim = x, oih = y })
-                            .SelectMany(
-                                z => z.oih.DefaultIfEmpty(),
-                                (x, y) => new { oim = x.oim, oih = y })
-                            .ToListAsync();
-
+            var result = await _shipmentRepository.getAllOceanImport();
             return Ok(result);
         }
 
         [HttpGet]
         [Route("getOimDetail/{id}")]
-        public async Task<ActionResult<List<Object>>> getOceanImportDetail(string id)
+        public async Task<IActionResult> getOceanImportDetail(string id)
         {
-            var result = await _context.T_OIMMAIN
-                            .GroupJoin(_context.T_OIHMAIN,
-                                x => x.F_ID,
-                                y => y.F_OIMMAINID,
-                                (x, y) => new { oim = x, oih = y })
-                            .Where(x => x.oim.F_RefNo == id)
-                            .SelectMany(
-                                z => z.oih.DefaultIfEmpty(),
-                                (x, y) => new { oim = x.oim, oih = y })
-                            .ToListAsync();
+            //var result = await _context.T_OIMMAIN
+            //                .GroupJoin(_context.T_OIHMAIN,
+            //                    x => x.F_ID,
+            //                    y => y.F_OIMMAINID,
+            //                    (x, y) => new { oim = x, oih = y })
+            //                .Where(x => x.oim.F_RefNo == id)
+            //                .SelectMany(
+            //                    z => z.oih.DefaultIfEmpty(),
+            //                    (x, y) => new { oim = x.oim, oih = y })
+            //                .ToListAsync();
 
-            return Ok(result);
+            return Ok();
         }
     }
 }

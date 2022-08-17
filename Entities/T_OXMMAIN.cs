@@ -1,4 +1,4 @@
-﻿namespace FMS_API.Models
+﻿namespace FMS_API.Entities
 {
     public class T_OXMMAIN
     {
