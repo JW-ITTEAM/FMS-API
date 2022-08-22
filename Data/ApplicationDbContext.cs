@@ -89,6 +89,7 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_Agent).HasMaxLength(100);
                 opt.Property(x => x.F_Vessel).HasMaxLength(25);
                 opt.Property(x => x.F_Voyage).HasMaxLength(15);
+                opt.Property(x => x.F_CarrierName).HasMaxLength(25);
                 opt.Property(x => x.F_LoadingPort).HasMaxLength(50);
                 opt.Property(x => x.F_DisCharge).HasMaxLength(50);
                 opt.Property(x => x.F_LCLFCL).HasMaxLength(1);
@@ -125,7 +126,7 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_MarkGross).HasMaxLength(800);
                 opt.Property(x => x.F_MarkMeasure).HasMaxLength(800);
                 opt.Property(x => x.F_ExpRLS).HasMaxLength(1);
-                opt.Property(x => x.F_FinalDest).HasMaxLength(25);
+                //opt.Property(x => x.F_FinalDest).HasMaxLength(25);
                 //opt.Property(x => x.F_ITClass).HasMaxLength(5);
                 //opt.Property(x => x.F_ITNo).HasMaxLength(20);
                 //opt.Property(x => x.F_ITPlace).HasMaxLength(20);
@@ -133,12 +134,12 @@ namespace FMS_API.Data
                 opt.Property(x => x.F_FcodeCustom).HasMaxLength(5);
                 opt.Property(x => x.F_ForeignDest).HasMaxLength(25);
                 opt.Property(x => x.F_PPCC).HasMaxLength(2);
-                opt.Property(x => x.F_PaidPlace).HasMaxLength(2);
+                //opt.Property(x => x.F_PaidPlace).HasMaxLength(2);
                 //opt.Property(x => x.F_SManID).HasMaxLength(10);
                 opt.Property(x => x.F_Mark).HasMaxLength(800);                
                 opt.Property(x => x.F_FileClosed).HasMaxLength(1);
                 opt.Property(x => x.F_ClosedBy).HasMaxLength(10);
-                opt.Property(x => x.F_Operator).HasMaxLength(10);
+                //opt.Property(x => x.F_Operator).HasMaxLength(10);
                 //opt.Property(x => x.F_SelectContainer).HasMaxLength(1);
                 opt.Property(x => x.F_MoveType).HasMaxLength(15);
                 opt.Property(x => x.F_Nomi).HasMaxLength(1);                

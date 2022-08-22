@@ -26,7 +26,7 @@ namespace FMS_API.Repositories
                     (x, y) => new { oim = x, oih = y })
                 .SelectMany(
                     z => z.oih.DefaultIfEmpty(),
-                    (x, y) => new TC_OIM{ oim = x.oim, oih = y })
+                    (x, y) => new TC_OIM { oim = x.oim, oih = y })
                 .ToListAsync() ?? new List<TC_OIM>();
 
             return result;

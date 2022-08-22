@@ -23,9 +23,10 @@
         public string? F_MarkGross { get; set; }
         public string? F_MarkMeasure { get; set; }
         public string? F_ExpRLS { get; set; }
-        public int? F_CFSLocation { get; set; }
-        public int? F_FCode { get; set; }
-        public string? F_FinalDest { get; set; }
+        public int? F_CFSLocation { get; set; } // pickup place
+        public int? F_CYLocation { get; set; }
+        //public int? F_FCode { get; set; }
+        //public string? F_FinalDest { get; set; }
         public DateTime? F_FETA { get; set; }
         //public string? F_ITClass { get; set; }
         public DateTime? F_PickupDate { get; set; }
@@ -37,11 +38,11 @@
         public string? F_FcodeCustom { get; set; }
         public string? F_ForeignDest { get; set; }
         public string? F_PPCC { get; set; }
-        public string? F_PaidPlace { get; set; }
+        //public string? F_PaidPlace { get; set; }
         public string? F_Mark { get; set; }
         public string? F_FileClosed { get; set; }
         public string? F_ClosedBy { get; set; }
-        public string? F_Operator { get; set; }
+        //public string? F_Operator { get; set; }
         public string? F_MoveType { get; set; }
         public string? F_Nomi { get; set; }
         public float? F_DefaultRate { get; set; }

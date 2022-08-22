@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FMS_API.Data;
+using FMS_API.Entities;
 using FMS_API.Models;
 using FMS_API.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,8 @@ namespace FMS_API.Controllers
         [Route("getOceanImportList")]
         public async Task<IActionResult> getOceanImportList()
         {
-            var result = await _shipmentRepository.getAllOceanImport();
+            var data = await _shipmentRepository.getAllOceanImport();
+            var result = _mapper.Map<List<VM_OIM>>(data);
             return Ok(result);
         }
 

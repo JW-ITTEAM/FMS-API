@@ -25,8 +25,14 @@ namespace FMS_API.Data.SeedData
                     //F_BFax
                     //F_BEmail
                     //F_BContact,
-                    F_Commodity = "",
                     F_CustRefNo = "",
+                    F_Commodity = "",
+                    F_HSCODE = null,
+                    F_TotalContainer = null,
+                    F_MarkPkg = "13 CTNS",
+                    F_Description = "WOMEN WOVEN SUIT- 429 SETS\n\nCNTR NO. : WHLU5330984\n\nFREIGHT COLLECT",
+                    F_MarkGross = "369.95 KGS\n815.59 LBS",
+                    F_MarkMeasure = "1.900 CBM\n67 CFT",
                     ////F_PKGS = 13,
                     ////F_Punit = "CTNS",
                     ////F_CBM = 1.9f,
@@ -41,8 +47,8 @@ namespace FMS_API.Data.SeedData
                     //F_RLSDate,
                     //F_ReleaseBy
                     F_CFSLocation = 141,
-                    F_FCode = 1,
-                    F_FinalDest = "NEW YORK, NY",
+                    //F_FCode = 1,
+                    //F_FinalDest = "NEW YORK, NY",
                     F_FETA = new DateTime(2022,7,20, 0,0,0),
                     //F_ITClass = "",
                     F_PickupDate = null,
@@ -56,16 +62,12 @@ namespace FMS_API.Data.SeedData
                     F_PPCC = "",
                     ////F_SManID = "",
                     F_Mark = "LCL/LCL\nCONT/SEAL NO.\n\nSHIPPING MARK\nSEPPLUS\nSTYLE # 02-1209-2\nCOLOR # DEEP ORANGE\nSIZE:\nQ'TY:35 SETS\nCARTON# OF\nMADE IN VIETNAM",
-                    F_MarkPkg = "13 CTNS",
-                    F_Description = "WOMEN WOVEN SUIT- 429 SETS\n\nCNTR NO. : WHLU5330984\n\nFREIGHT COLLECT",
-                    F_MarkGross = "369.95 KGS\n815.59 LBS",
-                    F_MarkMeasure = "1.900 CBM\n67 CFT",
                     //F_GODate
                     //F_LastFreeday
                     F_FileClosed = "3",
                     F_ClosedBy = "",
                     //F_OtherDescript
-                    F_Operator = "LAURA",
+                    //F_Operator = "LAURA",
                     //F_SelectContainer
                     F_MoveType = "CFS/CFS",
                     F_Nomi = "N",
@@ -98,6 +100,8 @@ namespace FMS_API.Data.SeedData
                     //F_AMSLinkDate
                     //F_CfmCharge
                     F_AMSBLNO = "ACLPAMCU8488898",
+                    F_ISFNO = "ISFNO TEMP DATA",
+                    F_Memo = "MEMO TEMP DATA",
                     //F_TruckLoadNo
                     //F_ReceiptPlace
                     //F_Complete

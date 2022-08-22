@@ -22,12 +22,14 @@
         public DateTime? F_ETD { get; set; }
         public string? F_Vessel { get; set; }
         public string? F_Voyage { get; set; }
+        public int? F_Carrier { get; set; }
+        public string? F_CarrierName { get; set; }
         public int? F_LCode { get; set; }
         public string? F_LoadingPort { get; set; }
         public int? F_DCode { get; set; }
         public string? F_DisCharge { get; set; }
-        public int? F_CYLocation { get; set; }
-        public int? F_CFSLocation { get; set; }
+        //public int? F_CYLocation { get; set; }
+        //public int? F_CFSLocation { get; set; }
         public DateTime? F_PostDate { get; set; }
         public string? F_LCLFCL { get; set; }
         public int? F_TotalContainer { get; set; }
