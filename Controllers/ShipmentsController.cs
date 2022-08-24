@@ -31,21 +31,12 @@ namespace FMS_API.Controllers
         }
 
         [HttpGet]
-        [Route("getOimDetail/{id}")]
+        [Route("getOceanImportDetail/{id}")]
         public async Task<IActionResult> getOceanImportDetail(string id)
         {
-            //var result = await _context.T_OIMMAIN
-            //                .GroupJoin(_context.T_OIHMAIN,
-            //                    x => x.F_ID,
-            //                    y => y.F_OIMMAINID,
-            //                    (x, y) => new { oim = x, oih = y })
-            //                .Where(x => x.oim.F_RefNo == id)
-            //                .SelectMany(
-            //                    z => z.oih.DefaultIfEmpty(),
-            //                    (x, y) => new { oim = x.oim, oih = y })
-            //                .ToListAsync();
-
-            return Ok();
+            var data = await _shipmentRepository.getOceanImportDetail(id);
+            var result = _mapper.Map<VM_OIM_DETAIL>(data);
+            return Ok(result);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace FMS_API.Data
             ChangeTracker.LazyLoadingEnabled = false;
 
             // Last Update Version
-            // Database Document 08082022
+            // Database Document 08222022
         }
         public DbSet<SuperHero> SuperHeroes { get; set; }
         public DbSet<T_OIMMAIN> T_OIMMAIN { get; set; }
@@ -19,12 +19,30 @@ namespace FMS_API.Data
         public DbSet<T_USER> T_USER { get; set; }
         public DbSet<T_FILEMAIN> T_FILEMAIN { get; set; }
         public DbSet<T_COMPANY> T_COMPANY { get; set; }
+        public DbSet<T_CONTAINER> T_CONTAINER { get; set; }
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<T_CONTAINER>(opt =>
+            {
+                opt.HasKey(x => x.F_ID);
+                opt.Property(x => x.F_TableName).HasMaxLength(10);
+                opt.Property(x => x.F_BLNO).HasMaxLength(15);
+                opt.Property(x => x.F_ContainerNo).HasMaxLength(11);
+                opt.Property(x => x.F_ConType).HasMaxLength(10);
+                opt.Property(x => x.F_SealNo).HasMaxLength(20);
+                opt.Property(x => x.F_BookingNo).HasMaxLength(15);
+                opt.Property(x => x.F_PickupNo).HasMaxLength(15);
+                opt.Property(x => x.F_PickupPlace).HasMaxLength(60);
+                opt.Property(x => x.F_Commodity).HasMaxLength(100);
+                opt.Property(x => x.F_HSCODE).HasMaxLength(30);
+                opt.Property(x => x.F_KGSLBS).HasMaxLength(30);
+                opt.Property(x => x.F_Memo).HasMaxLength(800);
+            });
 
             modelBuilder.Entity<T_USER>(opt =>
             {
