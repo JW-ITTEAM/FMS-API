@@ -9,6 +9,7 @@ namespace FMS_API.Repositories
     {
         public Task<List<TC_OIM>> getAllOceanImport();
         public Task<TC_OIM> getOceanImportDetail(string rmh_id);
+        public Task<List<T_CONTAINER>> getOceanImportContainerList(string id);
     }
 
     public class ShipmentRepository : IShipmentRepository
@@ -61,6 +62,24 @@ namespace FMS_API.Repositories
                                 z => z.oih.DefaultIfEmpty(), 
                                 (x, y) => new TC_OIM { oim = x.oim, oih = y })
                             .FirstOrDefaultAsync() ?? new TC_OIM();
+
+            return result;
+        }
+
+        public async Task<List<T_CONTAINER>> getOceanImportContainerList(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                return new List<T_CONTAINER>();
+
+            if (!int.TryParse(id, out int fid))
+            {
+                throw new ArgumentException(
+                    String.Format("This value, {0} can not convert to integer", id));
+            }
+
+            var result = await _context.T_CONTAINER
+                                .Where(x => x.F_TableName == "OIMMAIN" 
+                                       && x.F_TableId == fid).ToListAsync();
 
             return result;
         }

@@ -5,7 +5,7 @@
         public int F_ID { get; set; }
         public string? F_TableName { get; set; }
         public int? F_TableId { get; set; }
-        public string? F_BLNO { get; set; }
+        //public string? F_BLNO { get; set; }
         public string? F_ContainerNo { get; set; }
         public string? F_ConType { get; set; }
         public string? F_SealNo { get; set; }

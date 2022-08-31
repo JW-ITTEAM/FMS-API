@@ -36,6 +36,17 @@ namespace FMS_API.Controllers
         {
             var data = await _shipmentRepository.getOceanImportDetail(id);
             var result = _mapper.Map<VM_OIM_DETAIL>(data);
+            var cont_data = await _shipmentRepository.getOceanImportContainerList(data.oim.F_ID.ToString());
+            result.VM_CONTAINERS = _mapper.Map<List<VM_CONTAINER>>(cont_data);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("getOceanImportContainerList/{fid}")]
+        public async Task<IActionResult> getOceanImportContainerList(string fid)
+        {
+            var data = await _shipmentRepository.getOceanImportContainerList(fid);
+            var result = _mapper.Map<List<VM_CONTAINER>>(data);
             return Ok(result);
         }
     }

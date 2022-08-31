@@ -31,7 +31,7 @@ namespace FMS_API.Data
             {
                 opt.HasKey(x => x.F_ID);
                 opt.Property(x => x.F_TableName).HasMaxLength(10);
-                opt.Property(x => x.F_BLNO).HasMaxLength(15);
+                //opt.Property(x => x.F_BLNO).HasMaxLength(15);
                 opt.Property(x => x.F_ContainerNo).HasMaxLength(11);
                 opt.Property(x => x.F_ConType).HasMaxLength(10);
                 opt.Property(x => x.F_SealNo).HasMaxLength(20);
