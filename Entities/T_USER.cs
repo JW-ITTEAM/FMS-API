@@ -1,6 +1,8 @@
-﻿namespace FMS_API.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace FMS_API.Entities
 {
-    public class T_USER
+    public class T_USER : IdentityUser
     {
         public int F_ID { get; set; }
         public string? F_UserId { get; set; }

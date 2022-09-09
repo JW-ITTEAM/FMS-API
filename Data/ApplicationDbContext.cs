@@ -1,4 +1,5 @@
 ﻿using FMS_API.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FMS_API.Data

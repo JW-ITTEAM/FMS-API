@@ -3,6 +3,7 @@ using FMS_API.Data;
 using FMS_API.Entities;
 using FMS_API.Models;
 using FMS_API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ namespace FMS_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class ShipmentsController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -47,7 +49,7 @@ namespace FMS_API.Controllers
         {
             var data = await _shipmentRepository.getOceanImportContainerList(fid);
             var result = _mapper.Map<List<VM_CONTAINER>>(data);
-            return Ok(result);
+            return Ok(result);            
         }
     }
 }
